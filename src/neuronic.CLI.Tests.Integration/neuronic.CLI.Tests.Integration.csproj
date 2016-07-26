@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5366A7DC-6B9B-42B0-945C-83C301B6EAC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>neuronic.CLI.Tests.Integration</RootNamespace>
+    <AssemblyName>neuronic.CLI.Tests.Integration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CLIReadIntegrationTestFixture.cs" />
+    <Compile Include="CLIListCommonCharactersIntegrationTestFixture.cs" />
+    <Compile Include="CLIReadFileIntegrationTestFixture.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\neuronic.CLI\neuronic.CLI.csproj">
+      <Project>{D87959B4-B662-4DCB-995B-20200DF89FCD}</Project>
+      <Name>neuronic.CLI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\neuronic.Core\neuronic.Core.csproj">
+      <Project>{8B167C0C-645E-4415-AC04-D7C3529B10D0}</Project>
+      <Name>neuronic.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\neuronic.Tests\neuronic.Tests.csproj">
+      <Project>{095A569E-E445-4492-AC94-6DF6865559B9}</Project>
+      <Name>neuronic.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\neuronic.Tests.Integration\neuronic.Tests.Integration.csproj">
+      <Project>{A58A9FE4-6B6E-4A12-9846-957BC9CA3341}</Project>
+      <Name>neuronic.Tests.Integration</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

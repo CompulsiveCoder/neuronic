@@ -1,0 +1,6 @@
+[submodule "mod/datamanager"]
+	path = mod/datamanager
+	url = https://github.com/CompulsiveCoder/datamanager.git
+[submodule "mod/gitdb-cs"]
+	path = mod/gitdb-cs
+	url = https://github.com/CompulsiveCoder/gitdb-cs.git
