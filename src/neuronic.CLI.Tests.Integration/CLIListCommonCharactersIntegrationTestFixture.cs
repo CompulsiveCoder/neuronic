@@ -4,7 +4,7 @@ using neuronic.Tests.Integration;
 
 namespace neuronic.CLI.Tests.Integration
 {
-    [TestFixture]
+    [TestFixture(Category="Integration")]
     public class CLIListCommonCharactersIntegrationTestFixture : BaseIntegrationTestFixture
     {
         [Test]
