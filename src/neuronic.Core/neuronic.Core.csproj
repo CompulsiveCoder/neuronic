@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B167C0C-645E-4415-AC04-D7C3529B10D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>neuronic.Core</RootNamespace>
+    <AssemblyName>neuronic.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gitdb.Data">
+      <HintPath>..\..\mod\gitdb-cs\bin\Release\gitdb.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="gitdb.Entities">
+      <HintPath>..\..\mod\gitdb-cs\bin\Release\gitdb.Entities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Neuron.cs" />
+    <Compile Include="Brain.cs" />
+    <Compile Include="NoIdleNeuronsAvailableException.cs" />
+    <Compile Include="Tools\CharacterFrequencyChecker.cs" />
+    <Compile Include="Tools\CharacterLearner.cs" />
+    <Compile Include="Tools\TextConceptLearner.cs" />
+    <Compile Include="Tools\TextConceptExtractor.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Tools\" />
+    <Folder Include="Learners\" />
+  </ItemGroup>
+</Project>
